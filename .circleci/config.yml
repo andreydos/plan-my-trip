@@ -102,7 +102,11 @@ workflows:
     jobs:
       - setNodeVersion
       - test
+        requires:
+          - setNodeVersion
       - build
+        requires:
+          - setNodeVersion
       # - deploy:
       #     # Only deploy if tests pass
       #     requires:
