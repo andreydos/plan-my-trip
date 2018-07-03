@@ -41,11 +41,9 @@ jobs:
     steps:
       - checkout
 
-      # Set required node version
-      - set_node_v: *set_node_version
-
       # Install dependencies
       - restore_cache: *install_restore_cache
+      - run: *set_node_version
       - run: *install_run
       - save_cache: *install_save_cache
 
